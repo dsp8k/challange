@@ -11,6 +11,8 @@ while (true)
         break;
     }
 
+
+
     
 
     // Spliting the input into hours and minutes
