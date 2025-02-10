@@ -1,0 +1,15 @@
+C:\Users\user\Downloads\challange\bin\Debug\net6.0\challange.exe
+C:\Users\user\Downloads\challange\bin\Debug\net6.0\challange.deps.json
+C:\Users\user\Downloads\challange\bin\Debug\net6.0\challange.runtimeconfig.json
+C:\Users\user\Downloads\challange\bin\Debug\net6.0\challange.dll
+C:\Users\user\Downloads\challange\bin\Debug\net6.0\challange.pdb
+C:\Users\user\Downloads\challange\obj\Debug\net6.0\challange.csproj.AssemblyReference.cache
+C:\Users\user\Downloads\challange\obj\Debug\net6.0\challange.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Downloads\challange\obj\Debug\net6.0\challange.AssemblyInfoInputs.cache
+C:\Users\user\Downloads\challange\obj\Debug\net6.0\challange.AssemblyInfo.cs
+C:\Users\user\Downloads\challange\obj\Debug\net6.0\challange.csproj.CoreCompileInputs.cache
+C:\Users\user\Downloads\challange\obj\Debug\net6.0\challange.dll
+C:\Users\user\Downloads\challange\obj\Debug\net6.0\refint\challange.dll
+C:\Users\user\Downloads\challange\obj\Debug\net6.0\challange.pdb
+C:\Users\user\Downloads\challange\obj\Debug\net6.0\challange.genruntimeconfig.cache
+C:\Users\user\Downloads\challange\obj\Debug\net6.0\ref\challange.dll

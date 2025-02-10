@@ -1,0 +1,8 @@
+write a c# console application that allow the user to enter the future time in hours and minute format, the program should continuously display how many minute and seconds untill that time.
+
+requirments. 
+the user enters a time in hours and minute format
+if the input is invalid prompt the user to entera valid time
+if the time in the future display a countdwn of minute and seconds
+if the time has already past inform the user that the time has already passed
+the program shouldexit only if the user types exit 
