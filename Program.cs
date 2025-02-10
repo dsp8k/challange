@@ -11,6 +11,8 @@ while (true)
         break;
     }
 
+    
+
     // Spliting the input into hours and minutes
     string[] timeParts = input.Split(':');
     if (timeParts.Length == 2 && int.TryParse(timeParts[0], out int hours) && int.TryParse(timeParts[1], out int minutes))
