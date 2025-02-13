@@ -1,63 +1,51 @@
-﻿// See https://aka.ms/new-console-template for more information
-while (true)
+﻿while (true)
 {
-    // asking the user for input
-    Console.Write("Enter a future time (HH:mm) or type 'exit' to quit: ");
-    string input = Console.ReadLine();
+    // Asking the user for input
+    System.Console.Write("Enter a future time (h:mm AM/PM) or type 'exit' to quit: ");
+    string input = System.Console.ReadLine();
 
-    // if the user wants to exit
+    // If the user wants to exit
     if (input.Trim().ToLower() == "exit")
     {
         break;
     }
 
-
-
-    
-
-    // Spliting the input into hours and minutes
-    string[] timeParts = input.Split(':');
-    if (timeParts.Length == 2 && int.TryParse(timeParts[0], out int hours) && int.TryParse(timeParts[1], out int minutes))
+    // Try to parse the input time
+    if (System.DateTime.TryParseExact(input, "h:mm tt", null, System.Globalization.DateTimeStyles.None, out System.DateTime targetTime))
     {
-        // Validate hours and minutes
-        if (hours >= 0 && hours < 24 && minutes >= 0 && minutes < 60)
+        System.DateTime now = System.DateTime.Now;
+
+        // Set the target time to today
+        targetTime = new System.DateTime(now.Year, now.Month, now.Day, targetTime.Hour, targetTime.Minute, 0);
+
+        // Check if the time has already passed
+        if (targetTime <= now)
         {
-            DateTime now = DateTime.Now;
-            DateTime targetTime = new DateTime(now.Year, now.Month, now.Day, hours, minutes, 0);
-
-            // Check if the time has already passed
-            if (targetTime <= now)
-            {
-                Console.WriteLine("The time has already passed. Try again.\n");
-                continue;
-            }
-
-            Console.WriteLine($"Countdown started for {targetTime:HH:mm}\n");
-
-            // Start countdown loop
-            while (true)
-            {
-                TimeSpan remaining = targetTime - DateTime.Now;
-
-                // If countdown reaches zero, break the loop
-                if (remaining.TotalSeconds <= 0)
-                {
-                    Console.WriteLine("Time reached!\n");
-                    break;
-                }
-
-                // Display the remaining time in minutes and seconds
-                Console.Write($"Time remaining: {remaining.Minutes} minutes {remaining.Seconds} seconds\r");
-                Thread.Sleep(1000); // Wait for 1 second before updating
-            }
+            System.Console.WriteLine("The time has already passed. Try again.\n");
+            continue;
         }
-        else
+
+        System.Console.WriteLine($"Countdown started from now to {targetTime:hh:mm tt}\n");
+
+        // Start countdown loop
+        while (true)
         {
-            Console.WriteLine("Invalid time format. Please enter a valid time in HH:mm format.\n");
+            System.TimeSpan remaining = targetTime - System.DateTime.Now;
+
+            // If countdown reaches zero, break the loop
+            if (remaining.TotalSeconds <= 0)
+            {
+                System.Console.WriteLine("Time reached!\n");
+                break;
+            }
+
+            // Display the remaining time in hours, minutes, and seconds
+            System.Console.Write($"\rTime remaining: {remaining.Hours} hours {remaining.Minutes} minutes {remaining.Seconds} seconds   ");
+            System.Threading.Thread.Sleep(1000); // Wait for 1 second before updating
         }
     }
     else
     {
-        Console.WriteLine("Invalid time format. Please enter a valid time in HH:mm format.\n");
+        System.Console.WriteLine("Invalid time format. Please enter a valid time in h:mm AM/PM format.\n");
     }
 }
